@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "nothing",
+  "scripts": {
+    "rojo": "rojo build -o dist/main.rbxm",
+    "nominify": "npm run rojo && npm run lune run wax.luau bundle input=./dist/main.rbxm output=./dist/main.lua minify=false",
+    "bundle": "npm run rojo && lune run ./build/init.luau",
+    "web": "node server.js",
+    "dev": "npm run bundle && nodemon --watch src --exec \"npm run bundle\""
+  },
+  "author": "xrer",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  }
+}
